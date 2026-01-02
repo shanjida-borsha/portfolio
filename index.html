@@ -35,6 +35,7 @@
 
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 
+        /* ===== ULTRA SLOW REVEAL ANIMATIONS ===== */
         .reveal { 
             opacity: 0; 
             transition: all 2.0s cubic-bezier(0.2, 1, 0.3, 1);
@@ -97,9 +98,11 @@
             transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); 
             border: 1px solid rgba(255,255,255,0.05);
         }
-        .card:hover { transform: translateY(-20px); }
-        .card i { font-size: 45px; margin-bottom: 20px !important; display: block; }
+        .card:hover { transform: translateY(-20px) scale(1.04); box-shadow: 0 20px 40px rgba(56, 189, 248, 0.25); }
+        .card i { font-size: 45px; margin-bottom: 20px !important; display: block; transition: 1.2s; }
+        .card:hover i { transform: rotate(15deg) scale(1.2); }
 
+        /* Skill Colors */
         .exp-fb { background: linear-gradient(135deg, #1877F2, #0052cc); }
         .exp-google { background: linear-gradient(135deg, #EA4335, #fbbc05); }
         .exp-seo { background: linear-gradient(135deg, #00C4CC, #38bdf8); }
@@ -109,6 +112,12 @@
         .exp-yt { background: linear-gradient(135deg, #ff0000, #b91c1c); }
         .exp-yt i { color: #ffffff !important; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); }
 
+        /* Project Colors */
+        .proj-1 { background: linear-gradient(135deg, #a855f7, #6366f1); }
+        .proj-2 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+        .proj-3 { background: linear-gradient(135deg, #10b981, #3b82f6); }
+
+        /* Full Width Contact Section */
         .contact {
             width: 100%;
             padding: 100px 0 !important;
@@ -133,7 +142,8 @@
             width: 100%; padding: 18px; margin-bottom: 20px !important;
             background: #0f172a; border: 2px solid #38bdf8; color: #fff; border-radius: 10px;
         }
-        form button { width: 100%; padding: 18px; background: #38bdf8; border: none; font-weight: 700; border-radius: 10px; cursor: pointer; }
+        form button { width: 100%; padding: 18px; background: #38bdf8; border: none; font-weight: 700; border-radius: 10px; cursor: pointer; transition: 0.5s; }
+        form button:hover { background: white; color: #020617; }
 
         .info-box { text-align: center; padding: 40px; width: 100%; }
         .contact-details p { font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px !important; }
@@ -218,6 +228,29 @@
     </div>
 </section>
 
+<section class="projects">
+    <div class="container">
+        <h2 class="reveal slide-up">Selected Projects</h2>
+        <div class="grid">
+            <div class="card proj-1 reveal slide-left">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>UI Design</h3>
+                <p>Sleek, modern web interfaces</p>
+            </div>
+            <div class="card proj-2 reveal slide-up">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Conversion</h3>
+                <p>Landing pages that sell</p>
+            </div>
+            <div class="card proj-3 reveal slide-right">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Strategy</h3>
+                <p>Full-funnel digital marketing</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="contact" class="contact">
     <div class="contact-full-wrapper">
         <h2 class="reveal slide-up">Get In Touch</h2>
@@ -248,7 +281,7 @@
         </div>
 
         <div class="map-container reveal">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14607.604248443212!2d90.3516584!3d23.7509466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4e578f13c5%3A0x7d6560938f72a6a6!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1710000000000"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.03694485061!2d90.35334235224376!3d23.7470505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf36a43b224d%3A0xc392688b5063073d!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1714589000000!5m2!1sen!2sbd"></iframe>
         </div>
     </div>
 </section>

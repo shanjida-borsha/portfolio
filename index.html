@@ -26,7 +26,6 @@
         header, section {
             padding: 80px 20px;
             background: #020617;
-            border: none;
         }
 
         header {
@@ -36,14 +35,12 @@
 
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 
-        /* ===== ULTRA SLOW REVEAL ANIMATIONS ===== */
+        /* ===== ANIMATIONS ===== */
         .reveal { 
             opacity: 0; 
             transition: all 2.0s cubic-bezier(0.2, 1, 0.3, 1);
         } 
         .slide-up { transform: translateY(50px); }
-        .slide-left { transform: translateX(-100px); }
-        .slide-right { transform: translateX(100px); }
         .zoom-in { transform: scale(0.85); }
         .active { opacity: 1 !important; transform: translate(0) scale(1) !important; }
 
@@ -61,7 +58,6 @@
         }
 
         .hero-text { text-align: center; }
-        .hero-text h1 { font-size: clamp(32px, 5vw, 55px); color: #f8fafc; }
         .designation { 
             font-family: 'Dancing Script', cursive; 
             color: #38bdf8; 
@@ -78,16 +74,14 @@
             font-weight: 700;
             border-radius: 50px;
             transition: 1.0s;
-            text-transform: uppercase;
             display: inline-flex;
             align-items: center;
             gap: 10px;
         }
-        .cv-btn:hover { background: #ffffff; transform: scale(1.05); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
 
-        /* ===== GRID & CARDS ===== */
-        .container { max-width: 1000px; margin: auto !important; }
-        h2 { text-align: center; font-size: 40px; margin-bottom: 50px !important; color: #fff; }
+        /* ===== SKILLS & PROJECTS GRID ===== */
+        .container { max-width: 1200px; margin: auto !important; }
+        h2 { text-align: center; font-size: 40px; margin-bottom: 50px !important; }
 
         .grid {
             display: grid;
@@ -101,98 +95,77 @@
             text-align: center;
             transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); 
             border: 1px solid rgba(255,255,255,0.05);
-            cursor: pointer;
         }
 
-        .card:hover { transform: translateY(-20px) scale(1.04); box-shadow: 0 20px 40px rgba(56, 189, 248, 0.25); }
-        .card i { font-size: 45px; margin-bottom: 20px !important; transition: transform 1.2s ease-in-out; display: block; }
-        .card:hover i { transform: rotate(15deg) scale(1.25); }
-
-        /* Expertise Gradients */
-        .exp-fb { background: linear-gradient(135deg, #1877F2, #0052cc); }
-        .exp-google { background: linear-gradient(135deg, #EA4335, #fbbc05); }
-        .exp-seo { background: linear-gradient(135deg, #00C4CC, #38bdf8); }
-        .exp-lead { background: linear-gradient(135deg, #8b5cf6, #d946ef); }
-        .exp-email { background: linear-gradient(135deg, #ff9a1a, #ff5e00); }
-        .exp-sig { background: linear-gradient(135deg, #2dd4bf, #0d9488); }
-
-        /* SPECIFIC YOUTUBE CARD FIX */
+        .card:hover { transform: translateY(-20px); }
         .exp-yt { background: linear-gradient(135deg, #ff0000, #b91c1c); }
-        .exp-yt i { 
-            color: #ffffff !important; 
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); /* Glow for visibility */
+        .exp-yt i { color: #ffffff !important; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); }
+
+        /* ===== FULL WIDTH CONTACT SECTION ===== */
+        .contact {
+            width: 100%;
+            padding: 100px 0 !important; /* Full edge-to-edge padding */
+            background: #0f172a; /* Slightly different dark shade for section break */
         }
 
-        .proj-1 { background: linear-gradient(135deg, #a855f7, #6366f1); }
-        .proj-2 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-        .proj-3 { background: linear-gradient(135deg, #10b981, #3b82f6); }
-
-        /* ===== CENTERED CONTACT DETAILS ===== */
-        .contact-wrapper {
+        .contact-full-wrapper {
+            width: 100%;
+            max-width: 100%; /* Removes side constraints */
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-            max-width: 650px;
-            margin: 0 auto !important;
-            gap: 40px;
         }
 
-        form { background: #0f172a; padding: 40px; border-radius: 20px; width: 100%; }
+        .contact-content {
+            width: 90%;
+            max-width: 800px; /* Limits the content for readability, but background stays full width */
+            margin: 0 auto !important;
+        }
+
+        form { background: #020617; padding: 40px; border-radius: 20px; width: 100%; margin-bottom: 40px !important; }
         form input, form textarea {
             width: 100%; padding: 18px; margin-bottom: 20px !important;
-            background: #020617; border: 2px solid #38bdf8; color: #fff; border-radius: 10px;
+            background: #0f172a; border: 2px solid #38bdf8; color: #fff; border-radius: 10px;
         }
-        form input::placeholder, form textarea::placeholder { color: #cbd5e1; opacity: 1; font-weight: 600; }
-        form button { width: 100%; padding: 18px; background: #38bdf8; font-weight: 700; border-radius: 10px; cursor: pointer; transition: 0.5s; border: none; }
+
+        form button {
+            width: 100%; padding: 18px; background: #38bdf8; border: none;
+            font-weight: 700; border-radius: 10px; cursor: pointer;
+        }
 
         .info-box {
-            display: flex;
-            flex-direction: column;
-            padding: 40px;
-            background: rgba(30, 41, 59, 0.4);
-            border-radius: 20px;
-            width: 100%;
-            align-items: center;
             text-align: center;
+            padding: 40px;
+            width: 100%;
         }
 
-        .info-title { font-size: 24px; color: #38bdf8; margin-bottom: 30px !important; }
-
         .contact-details p {
-            margin-bottom: 20px !important;
             font-size: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
+            margin-bottom: 20px !important;
         }
-        .contact-details a { color: inherit; text-decoration: none; transition: 0.3s; }
-        .contact-details i { color: #38bdf8; width: 25px; font-size: 24px; text-align: center; }
 
-        /* SLOW SOCIAL ICON ANIMATIONS */
-        .social-links { display: flex; gap: 25px; justify-content: center; width: 100%; margin-top: 30px !important; }
-        .social-links a { 
-            font-size: 32px; 
-            text-decoration: none; 
-            transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-            display: inline-block;
-        }
-        
+        .social-links { display: flex; gap: 30px; justify-content: center; margin-top: 30px !important; }
+        .social-links a { font-size: 35px; transition: 1.2s; display: inline-block; text-decoration: none; }
+        .social-links a:hover { transform: translateY(-10px); filter: drop-shadow(0 0 10px currentColor); }
+
         .fa-linkedin { color: #0A66C2; }
         .fa-whatsapp { color: #25D366; }
         .fa-facebook { color: #1877F2; }
         .fa-youtube { color: #FF0000; }
 
-        .social-links a:hover { 
-            transform: translateY(-12px) scale(1.15); 
-            filter: drop-shadow(0 10px 15px currentColor);
+        .map-container { 
+            width: 100%; 
+            height: 450px; 
+            margin-top: 50px !important;
+            border-top: 4px solid #38bdf8;
         }
+        iframe { width: 100%; height: 100%; border: 0; }
 
-        .map-container { border-radius: 20px; overflow: hidden; border: 4px solid #1e293b; height: 350px; width: 100%; }
-        iframe { width: 100%; height: 100%; border: 0; filter: contrast(1.1) saturate(1.4); }
-
-        footer { padding: 40px 20px; text-align: center; background: #010409; }
+        footer { padding: 40px; text-align: center; background: #010409; }
     </style>
 </head>
 
@@ -200,112 +173,47 @@
 
 <header>
     <div class="hero reveal zoom-in">
-        <img src="photo.png" alt="Shanjida Khanom Borsha">
+        <img src="photo.jpg" alt="Shanjida Khanom Borsha">
         <div class="hero-text">
             <h1>SHANJIDA KHANOM BORSHA</h1>
             <span class="designation">Innovative Digital Marketer</span>
-            <a href="CV-Shanjida Khanom Borsha.pdf" download class="cv-btn">
+            <a href="your-cv-file.pdf" download class="cv-btn">
                 <i class="fa-solid fa-file-arrow-down"></i> DOWNLOAD CV
             </a>
         </div>
     </div>
 </header>
 
-<section class="skills">
-    <div class="container">
-        <h2 class="reveal slide-up">Expertise</h2>
-        <div class="grid">
-            <div class="card exp-fb reveal slide-left">
-                <i class="fa-brands fa-facebook-f"></i>
-                <h3>Facebook Ads</h3>
-                <p>Scaling brands with precision</p>
-            </div>
-            <div class="card exp-google reveal slide-up">
-                <i class="fa-brands fa-google"></i>
-                <h3>Google Ads</h3>
-                <p>Maximizing search visibility</p>
-            </div>
-            <div class="card exp-seo reveal slide-right">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <h3>SEO</h3>
-                <p>Ranking on the first page</p>
-            </div>
-            <div class="card exp-lead reveal slide-left">
-                <i class="fa-solid fa-filter"></i>
-                <h3>Lead Generation</h3>
-                <p>High-quality prospect hunting</p>
-            </div>
-            <div class="card exp-email reveal slide-up">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <h3>Email Marketing</h3>
-                <p>Retention & automated flows</p>
-            </div>
-            <div class="card exp-yt reveal slide-right">
-                <i class="fa-brands fa-youtube"></i>
-                <h3>YouTube SEO</h3>
-                <p>Optimizing video reach</p>
-            </div>
-            <div class="card exp-sig reveal slide-up">
-                <i class="fa-solid fa-signature"></i>
-                <h3>Email Signature</h3>
-                <p>Professional brand identity</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="projects">
-    <div class="container">
-        <h2 class="reveal slide-up">Selected Projects</h2>
-        <div class="grid">
-            <div class="card proj-1 reveal slide-left">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3>UI Design</h3>
-                <p>Sleek, modern web interfaces</p>
-            </div>
-            <div class="card proj-2 reveal slide-up">
-                <i class="fa-solid fa-bullseye"></i>
-                <h3>Conversion</h3>
-                <p>Landing pages that sell</p>
-            </div>
-            <div class="card proj-3 reveal slide-right">
-                <i class="fa-solid fa-bolt"></i>
-                <h3>Strategy</h3>
-                <p>Full-funnel digital marketing</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="contact" class="contact">
-    <div class="container">
-        <h2 class="reveal slide-up">Contact Me</h2>
-        <div class="contact-wrapper">
-            <form action="https://formspree.io/f/xykzwdar" method="POST" class="reveal slide-up">
-                <input type="text" name="name" placeholder="NAME" required>
+    <div class="contact-full-wrapper">
+        <h2 class="reveal slide-up">Get In Touch</h2>
+        
+        <div class="contact-content reveal slide-up">
+            <form action="https://formspree.io/f/xykzwdar" method="POST">
+                <input type="text" name="name" placeholder="YOUR NAME" required>
                 <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
-                <textarea name="message" rows="4" placeholder="HOW CAN I HELP YOU?" required></textarea>
+                <textarea name="message" rows="5" placeholder="MESSAGE" required></textarea>
                 <button type="submit">SEND MESSAGE</button>
             </form>
 
-            <div class="info-box reveal slide-up">
-                <h4 class="info-title">GET IN TOUCH</h4>
+            <div class="info-box">
                 <div class="contact-details">
                     <p><i class="fa-solid fa-phone"></i> +880 1741 798260</p>
                     <p><i class="fa-solid fa-location-dot"></i> Mohammadpur, Dhaka</p>
-                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:shanjida.borsha1@gmail.com">shanjida.borsha1@gmail.com</a></p>
+                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:shanjida.borsha1@gmail.com" style="color:white; text-decoration:none;">shanjida.borsha1@gmail.com</a></p>
                 </div>
+                
                 <div class="social-links">
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://wa.me/8801741798260" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://wa.me/8801741798260"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
+        </div>
 
-            <div class="map-container reveal slide-up">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14607.602244927233!2d90.3541604!3d23.750953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4e37402633%3A0x67343e0d869910!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd3" loading="lazy"></iframe>
-            </div>
+        <div class="map-container reveal">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14607.602953335529!2d90.354117!3d23.750889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf607068560d%3A0x7d00f7273f009d1!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000"></iframe>
         </div>
     </div>
 </section>

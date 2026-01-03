@@ -51,8 +51,16 @@
         .slide-right { transform: translateX(50px); }
         .zoom-in { transform: scale(0.9); }
 
+        /* STAGGERED CARD DELAYS */
+        .grid .card:nth-child(1) { transition-delay: 0.1s; }
+        .grid .card:nth-child(2) { transition-delay: 0.2s; }
+        .grid .card:nth-child(3) { transition-delay: 0.3s; }
+        .grid .card:nth-child(4) { transition-delay: 0.4s; }
+        .grid .card:nth-child(5) { transition-delay: 0.5s; }
+        .grid .card:nth-child(6) { transition-delay: 0.6s; }
+
         /* HERO SECTION */
-        .hero img.profile-pic {
+        .hero img {
             width: 160px; height: 160px;
             border-radius: 50%; 
             border: 2px solid #38bdf8; /* Thinner Border */
@@ -64,14 +72,11 @@
         }
 
         .hero-text { text-align: center; max-width: 850px; margin: 0 auto !important; }
-        
-        .hero-text h1 { font-size: 42px; margin-bottom: 5px !important; }
-
         .designation { 
             font-family: 'Dancing Script', cursive; 
             color: #38bdf8; 
-            font-size: 30px; 
-            margin-bottom: 15px !important; 
+            font-size: 28px; 
+            margin-bottom: 10px !important; 
             display: block;
         }
 
@@ -105,11 +110,11 @@
             gap: 10px;
         }
 
-        .fiverr-badge-icon {
+        /* ORIGINAL FIVERR LOGO SVG STYLE */
+        .fiverr-logo-svg {
             width: 22px;
             height: 22px;
-            border-radius: 50%;
-            object-fit: contain;
+            fill: #1dbf73; /* Official Fiverr Green */
         }
         
         .cv-btn {
@@ -187,7 +192,7 @@
             font-weight: 700; border-radius: 8px; border: none; cursor: pointer; 
         }
 
-        .social-links { display: flex; gap: 25px; justify-content: center; margin-bottom: 40px !important; }
+        .social-links { display: flex; gap: 25px; justify-content: center; margin-bottom: 30px !important; }
         .social-links a { font-size: 35px; transition: 0.4s; text-decoration: none; }
         .social-links a:hover { transform: translateY(-5px); }
 
@@ -204,22 +209,24 @@
 
 <header>
     <div class="hero reveal zoom-in">
-        <img src="photo.png" alt="Shanjida Khanom Borsha" class="profile-pic">
+        <img src="photo.png" alt="Shanjida Khanom Borsha">
         <div class="hero-text">
             <h1>SHANJIDA KHANOM BORSHA</h1>
-            <span class="designation">Innovative Digital Marketer</span>
+            <span class="designation">NSDA Level 4 Certified Digital Marketer</span>
             
             <div class="badge-container">
                 <span class="badge"><i class="fa-solid fa-award" style="color: #fbbc05;"></i> NSDA Level 4 Certified</span>
                 <span class="badge">
-                    <img src="download (7).png" alt="Fiverr" class="fiverr-badge-icon">
+                    <svg class="fiverr-logo-svg" viewBox="0 0 512 512">
+                        <path d="M410 0H102C45.8 0 0 45.8 0 102v308c0 56.2 45.8 102 102 102h308c56.2 0 102-45.8 102-102V102c0-56.2-45.8-102-102-102zM196.2 350.2c-31.5 0-56.8-25.3-56.8-56.8s25.3-56.8 56.8-56.8 56.8 25.3 56.8 56.8-25.3 56.8-56.8 56.8zm119.6 0h-56.8V161.8h56.8v188.4zM196.2 268.4c-13.8 0-25 11.2-25 25s11.2 25 25 25 25-11.2 25-25-11.2-25-25-25z"/>
+                    </svg>
                     Fiverr International Freelancer
                 </span>
             </div>
 
             <p class="profile-bio">
-                Expert Digital Marketing Specialist providing global-standard services for international clients. 
-                With an NSDA Level 4 Certification and a focus on high-impact strategies, I help brands dominate Facebook, Google, and Search Engines.
+                Experienced Digital Marketing Specialist helping international clients scale through data-driven strategies. 
+                Certified by NSDA at Level 4, I specialize in Facebook Ads, Google Ads, and SEO to deliver global standards of excellence.
             </p>
 
             <a href="CV-Shanjida Khanom Borsha.pdf" download class="cv-btn">
@@ -233,12 +240,12 @@
     <div class="container">
         <h2 class="reveal slide-up">Expertise</h2>
         <div class="grid">
-            <div class="card reveal slide-left"><i class="fa-brands fa-facebook-f"></i><h3>Facebook Ads</h3><p>Scaling brands with precision targeting</p></div>
-            <div class="card reveal slide-up"><i class="fa-brands fa-google"></i><h3>Google Ads</h3><p>ROI-focused search and display campaigns</p></div>
-            <div class="card reveal slide-right"><i class="fa-solid fa-magnifying-glass"></i><h3>SEO Strategy</h3><p>Organic growth and ranking mastery</p></div>
-            <div class="card reveal slide-left"><i class="fa-solid fa-filter"></i><h3>Lead Generation</h3><p>High-quality client acquisition</p></div>
-            <div class="card reveal slide-up"><i class="fa-solid fa-envelope"></i><h3>Email Marketing</h3><p>Retention and conversion automation</p></div>
-            <div class="card reveal slide-right"><i class="fa-brands fa-youtube"></i><h3>YouTube Ads</h3><p>Strategic video brand positioning</p></div>
+            <div class="card reveal slide-left"><i class="fa-brands fa-facebook-f"></i><h3>Facebook Ads</h3><p>High-conversion campaign management</p></div>
+            <div class="card reveal slide-up"><i class="fa-brands fa-google"></i><h3>Google Ads</h3><p>Search & Display Network mastery</p></div>
+            <div class="card reveal slide-right"><i class="fa-solid fa-magnifying-glass"></i><h3>SEO Mastery</h3><p>Ranking businesses on the first page</p></div>
+            <div class="card reveal slide-left"><i class="fa-solid fa-filter"></i><h3>Lead Generation</h3><p>Building high-quality sales funnels</p></div>
+            <div class="card reveal slide-up"><i class="fa-solid fa-envelope"></i><h3>Email Marketing</h3><p>Automated retention strategies</p></div>
+            <div class="card reveal slide-right"><i class="fa-brands fa-youtube"></i><h3>YouTube Ads</h3><p>Video marketing for brand growth</p></div>
         </div>
     </div>
 </section>
@@ -278,7 +285,7 @@
             </div>
 
             <div class="map-section reveal zoom-in">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1!1s0x3755c0ad09d84687%3A0x367980993d054d6d!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="http://googleusercontent.com/maps.google.com/6" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

@@ -24,18 +24,19 @@
             scroll-behavior: smooth;
         }
 
+        /* REDUCED SECTION GAPS */
         header, section {
-            padding: 60px 20px; 
+            padding: 30px 20px; 
             background: #020617;
         }
 
         header {
-            padding-top: 80px;
+            padding-top: 50px;
             background: radial-gradient(circle at top right, #1e293b, #020617);
         }
 
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        h2 { text-align: center; font-size: 36px; margin-bottom: 40px !important; color: #fff; }
+        h2 { text-align: center; font-size: 32px; margin-bottom: 25px !important; color: #fff; }
 
         /* REPEATABLE SCROLL ANIMATIONS */
         .reveal { opacity: 0; transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1); } 
@@ -47,12 +48,12 @@
 
         /* HERO SECTION */
         .hero img.profile-pic {
-            width: 160px; height: 160px;
+            width: 150px; height: 150px;
             border-radius: 50%; 
             border: 2px solid #38bdf8;
             object-fit: cover; 
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-            margin-bottom: 20px !important; 
+            margin-bottom: 15px !important; 
             display: block; 
             margin: 0 auto !important;
         }
@@ -61,16 +62,16 @@
         .designation { 
             font-family: 'Dancing Script', cursive; 
             color: #38bdf8; 
-            font-size: 32px; 
-            margin-bottom: 15px !important; 
+            font-size: 28px; 
+            margin-bottom: 10px !important; 
             display: block;
         }
 
         .badge-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px !important;
+            gap: 12px;
+            margin-bottom: 20px !important;
             flex-wrap: wrap;
         }
 
@@ -78,18 +79,18 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(56, 189, 248, 0.3);
             color: #fff;
-            padding: 8px 18px;
+            padding: 6px 15px;
             border-radius: 30px;
-            font-size: 14px;
+            font-size: 13px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .fiverr-badge-icon { width: 20px; height: 20px; border-radius: 50%; }
+        .fiverr-badge-icon { width: 18px; height: 18px; border-radius: 50%; }
         
         .cv-btn {
-            padding: 12px 35px; 
+            padding: 10px 30px; 
             background: #38bdf8; 
             color: #020617;
             text-decoration: none; 
@@ -105,20 +106,39 @@
         .container { max-width: 1100px; margin: auto !important; }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
+        /* SLOW CARD TRANSITIONS */
         .card {
-            padding: 40px 25px; 
+            padding: 35px 25px; 
             border-radius: 20px; 
             text-align: center;
-            transition: all 0.5s ease; 
+            transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1); /* SLOWER & SMOOTHER */
             color: white;
             border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .card i { font-size: 50px; margin-bottom: 20px !important; display: block; }
+        .card:hover { 
+            transform: translateY(-15px); 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+        
+        /* CARD ICON STYLING & ANIMATION */
+        .card i { 
+            font-size: 45px; 
+            margin-bottom: 15px !important; 
+            display: inline-block; 
+            transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1); /* SLOWER ICON ROTATION */
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .card:hover i { 
+            transform: rotate(15deg) scale(1.15); 
+        }
 
         /* COLOR GRADIENTS FOR EXPERTISE */
         .exp-fb { background: linear-gradient(135deg, #1877F2, #0052cc); }
@@ -134,31 +154,42 @@
         .proj-3 { background: linear-gradient(135deg, #4c1d95, #7c3aed); }
 
         /* CAROUSEL */
-        .carousel-container { width: 100%; overflow: hidden; padding: 20px 0 !important; }
+        .carousel-container { width: 100%; overflow: hidden; padding: 15px 0 !important; }
         .carousel-track { display: flex; gap: 20px; width: max-content; animation: scroll 30s linear infinite; }
         .cert-card {
-            width: 280px; height: 180px; background: #0f172a; border-radius: 10px;
+            width: 280px; height: 160px; background: #0f172a; border-radius: 10px;
             border: 1px solid #38bdf8; display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
-        .cert-card img { width: 80%; height: 100px; object-fit: contain; }
+        .cert-card img { width: 70%; height: 80px; object-fit: contain; }
 
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-300px * 4)); } }
 
         /* CONTACT & MAP */
         .contact { background: #0f172a; }
-        form { background: #020617; padding: 30px; border-radius: 15px; margin-bottom: 30px !important; }
+        form { background: #020617; padding: 25px; border-radius: 15px; margin-bottom: 20px !important; }
         form input, form textarea {
-            width: 100%; padding: 15px; margin-bottom: 15px !important;
+            width: 100%; padding: 12px; margin-bottom: 12px !important;
             background: #0f172a; border: 1px solid #334155; color: #fff; border-radius: 8px;
         }
-        form button { width: 100%; padding: 15px; background: #38bdf8; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; }
+        form button { width: 100%; padding: 12px; background: #38bdf8; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        form button:hover { background: #7dd3fc; }
         
-        .social-links { display: flex; gap: 25px; justify-content: center; margin-bottom: 30px !important; }
-        .social-links a { font-size: 35px; transition: 0.4s; }
-        
-        .map-section { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; border: 2px solid #38bdf8; }
+        /* SOCIAL LINKS GLOW */
+        .social-links { display: flex; gap: 25px; justify-content: center; margin-bottom: 25px !important; }
+        .social-links a { 
+            font-size: 32px; 
+            transition: all 0.5s ease; 
+            display: inline-block;
+        }
+        .social-links a:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.3);
+            text-shadow: 0 0 15px currentColor;
+        }
 
-        footer { padding: 30px; text-align: center; background: #010409; font-size: 13px; }
+        .map-section { width: 100%; height: 300px; border-radius: 15px; overflow: hidden; border: 2px solid #38bdf8; }
+
+        footer { padding: 20px; text-align: center; background: #010409; font-size: 12px; }
     </style>
 </head>
 
@@ -221,12 +252,11 @@
         <h2 class="reveal slide-up">Certifications</h2>
         <div class="carousel-container reveal zoom-in">
             <div class="carousel-track">
-                <div class="cert-card"><img src="cert1.png" alt="NSDA"><p>NSDA Level 4</p></div>
-                <div class="cert-card"><img src="cert2.png" alt="Google"><p>Google Ads Certified</p></div>
-                <div class="cert-card"><img src="cert3.png" alt="Meta"><p>Meta Professional</p></div>
-                <div class="cert-card"><img src="cert4.png" alt="SEO"><p>SEO Strategy Expert</p></div>
-                <div class="cert-card"><img src="cert1.png" alt="NSDA"><p>NSDA Level 4</p></div>
-                <div class="cert-card"><img src="cert2.png" alt="Google"><p>Google Ads Certified</p></div>
+                <div class="cert-card"><img src="Digital Marketing Level 4.jpeg" alt="NSDA"><p>Digital Marketing Level 4</p></div>
+                <div class="cert-card"><img src="Digital Marketing Basic.jpg" alt="Digital Marketing Basic"><p>Digital Marketing Basic</p></div>
+                <div class="cert-card"><img src="Google Ads.jpg" alt="Meta"><p>Google Ads</p></div>
+                <div class="cert-card"><img src="Facebook Ads.jpg" alt="SEO"><p>Facebook Ads</p></div>
+                <div class="cert-card"><img src="Fundamentals of Mailchimp.jpg" alt="NSDA"><p>Fundamentals of Mailchimp</p></div>
             </div>
         </div>
     </div>
@@ -251,7 +281,7 @@
             </div>
 
             <div class="map-section reveal zoom-in">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.036944850553!2d90.35334465!3d23.74704995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4ab0ad763d%3A0x7d0023a859e98e49!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.8223908687!2d90.27918590635!3d23.780573258035947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa569bc240040!2sDhaka!5e0!3m2!1sen!2sbd!4v1714567890123!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

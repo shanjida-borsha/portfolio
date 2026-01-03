@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+        /* RESET & TIGHT SPACING */
         * {
             margin: 0 !important;
             padding: 0;
@@ -24,85 +25,108 @@
         }
 
         header, section {
-            padding: 80px 20px;
+            padding: 40px 20px; 
             background: #020617;
         }
 
         header {
-            padding-top: 100px;
+            padding-top: 60px;
             background: radial-gradient(circle at top right, #1e293b, #020617);
         }
 
         h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        h2 { text-align: center; font-size: 36px; margin-bottom: 30px !important; }
 
-        /* ===== ULTRA SLOW REVEAL ANIMATIONS ===== */
+        /* REPEATABLE SCROLL ANIMATIONS */
         .reveal { 
             opacity: 0; 
-            transition: all 2.0s cubic-bezier(0.2, 1, 0.3, 1);
+            transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1); 
         } 
-        .slide-up { transform: translateY(50px); }
-        .slide-left { transform: translateX(-100px); }
-        .slide-right { transform: translateX(100px); }
-        .zoom-in { transform: scale(0.85); }
-        .active { opacity: 1 !important; transform: translate(0) scale(1) !important; }
+        .slide-up { transform: translateY(30px); }
+        .slide-left { transform: translateX(-50px); }
+        .slide-right { transform: translateX(50px); }
+        .zoom-in { transform: scale(0.9); }
 
+        .active { 
+            opacity: 1 !important; 
+            transform: translate(0) scale(1) !important; 
+        }
+
+        /* CARD STAGGERING DELAYS */
+        .grid .card:nth-child(1) { transition-delay: 0.1s; }
+        .grid .card:nth-child(2) { transition-delay: 0.2s; }
+        .grid .card:nth-child(3) { transition-delay: 0.3s; }
+        .grid .card:nth-child(4) { transition-delay: 0.4s; }
+        .grid .card:nth-child(5) { transition-delay: 0.5s; }
+        .grid .card:nth-child(6) { transition-delay: 0.6s; }
+        .grid .card:nth-child(7) { transition-delay: 0.7s; }
+
+        /* HERO SECTION - REFINED THIN BORDER */
         .hero img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 6px solid #38bdf8;
-            object-fit: cover;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
-            margin-bottom: 20px !important;
-            display: block;
-            margin-left: auto !important;
-            margin-right: auto !important;
+            width: 180px; height: 180px;
+            border-radius: 50%; 
+            border: 2px solid #38bdf8; /* Thinner border applied here */
+            object-fit: cover; 
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            margin-bottom: 15px !important; 
+            display: block; 
+            margin: 0 auto !important;
         }
 
         .hero-text { text-align: center; }
         .designation { 
             font-family: 'Dancing Script', cursive; 
             color: #38bdf8; 
-            font-size: 38px; 
-            margin-bottom: 25px !important;
+            font-size: 32px; 
+            margin-bottom: 20px !important; 
             display: block;
         }
         
         .cv-btn {
-            padding: 14px 40px;
-            background: #38bdf8;
+            padding: 12px 35px; 
+            background: #38bdf8; 
             color: #020617;
-            text-decoration: none;
-            font-weight: 700;
+            text-decoration: none; 
+            font-weight: 700; 
             border-radius: 50px;
-            transition: 1.0s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            transition: 0.4s; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px;
         }
         .cv-btn:hover { background: white; transform: scale(1.05); }
 
-        .container { max-width: 1200px; margin: auto !important; }
-        h2 { text-align: center; font-size: 40px; margin-bottom: 50px !important; }
-
+        /* GRID & CARDS */
+        .container { max-width: 1100px; margin: auto !important; }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            padding: 50px 30px;
-            border-radius: 20px;
+            padding: 40px 25px; 
+            border-radius: 15px; 
             text-align: center;
-            transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); 
+            transition: all 0.6s ease; 
             border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
         }
-        .card:hover { transform: translateY(-20px) scale(1.04); box-shadow: 0 20px 40px rgba(56, 189, 248, 0.25); }
-        .card i { font-size: 45px; margin-bottom: 20px !important; display: block; transition: 1.2s; }
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.2); 
+        }
+        
+        /* ICON HOVER ANIMATION */
+        .card i { 
+            font-size: 45px; 
+            margin-bottom: 15px !important; 
+            display: block; 
+            transition: transform 0.6s ease-in-out; 
+        }
         .card:hover i { transform: rotate(15deg) scale(1.2); }
 
-        /* Skill Colors */
+        /* COLORS */
         .exp-fb { background: linear-gradient(135deg, #1877F2, #0052cc); }
         .exp-google { background: linear-gradient(135deg, #EA4335, #fbbc05); }
         .exp-seo { background: linear-gradient(135deg, #00C4CC, #38bdf8); }
@@ -112,61 +136,62 @@
         .exp-yt { background: linear-gradient(135deg, #ff0000, #b91c1c); }
         .exp-yt i { color: #ffffff !important; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); }
 
-        /* Project Colors */
         .proj-1 { background: linear-gradient(135deg, #a855f7, #6366f1); }
         .proj-2 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
         .proj-3 { background: linear-gradient(135deg, #10b981, #3b82f6); }
 
-        /* Full Width Contact Section */
-        .contact {
-            width: 100%;
-            padding: 100px 0 !important;
-            background: #0f172a;
+        /* CAROUSEL */
+        .carousel-container { width: 100%; overflow: hidden; padding: 20px 0 !important; }
+        .carousel-track { 
+            display: flex; 
+            gap: 20px; 
+            width: max-content; 
+            animation: scroll 30s linear infinite; 
+        }
+        .carousel-track:hover { animation-play-state: paused; }
+        .cert-card {
+            width: 280px; height: 180px; 
+            background: #0f172a; 
+            border-radius: 10px;
+            border: 1px solid #38bdf8; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+        }
+        .cert-card img { width: 90%; height: 120px; object-fit: contain; margin-bottom: 10px !important; }
+        .cert-card p { font-size: 14px; color: #38bdf8; font-weight: 600; }
+
+        @keyframes scroll { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(calc(-300px * 4)); } 
         }
 
-        .contact-full-wrapper {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* CONTACT SECTION */
+        .contact { width: 100%; padding: 60px 0 !important; background: #0f172a; }
+        .contact-content { width: 90%; max-width: 700px; margin: 0 auto !important; }
+        form { 
+            background: #020617; 
+            padding: 30px; 
+            border-radius: 15px; 
+            margin-bottom: 30px !important; 
         }
-
-        .contact-content {
-            width: 90%;
-            max-width: 800px;
-            margin: 0 auto !important;
-        }
-
-        form { background: #020617; padding: 40px; border-radius: 20px; width: 100%; margin-bottom: 40px !important; }
         form input, form textarea {
-            width: 100%; padding: 18px; margin-bottom: 20px !important;
-            background: #0f172a; border: 2px solid #38bdf8; color: #fff; border-radius: 10px;
+            width: 100%; padding: 15px; margin-bottom: 15px !important;
+            background: #0f172a; border: 1px solid #38bdf8; color: #fff; border-radius: 8px;
         }
-        form button { width: 100%; padding: 18px; background: #38bdf8; border: none; font-weight: 700; border-radius: 10px; cursor: pointer; transition: 0.5s; }
+        form button { 
+            width: 100%; padding: 15px; background: #38bdf8; 
+            font-weight: 700; border-radius: 8px; border: none; 
+            cursor: pointer; transition: 0.3s; 
+        }
         form button:hover { background: white; color: #020617; }
 
-        .info-box { text-align: center; padding: 40px; width: 100%; }
-        .contact-details p { font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px !important; }
-        .contact-details a { color: inherit; text-decoration: none; }
+        .social-links { display: flex; gap: 25px; justify-content: center; }
+        .social-links a { font-size: 35px; transition: 0.5s; text-decoration: none; }
+        .social-links a:hover { transform: translateY(-10px); filter: drop-shadow(0 0 10px currentColor); }
 
-        .social-links { display: flex; gap: 30px; justify-content: center; margin-top: 30px !important; }
-        .social-links a { font-size: 35px; transition: 1.2s; display: inline-block; text-decoration: none; }
-        .social-links a:hover { transform: translateY(-12px) scale(1.15); filter: drop-shadow(0 10px 15px currentColor); }
-
-        .fa-linkedin { color: #0A66C2; }
-        .fa-whatsapp { color: #25D366; }
-        .fa-facebook { color: #1877F2; }
-        .fa-youtube { color: #FF0000; }
-
-        .map-container { 
-            width: 100%; 
-            height: 450px; 
-            margin-top: 50px !important;
-            border-top: 4px solid #38bdf8;
-        }
-        iframe { width: 100%; height: 100%; border: 0; }
-
-        footer { padding: 40px; text-align: center; background: #010409; }
+        footer { padding: 30px; text-align: center; background: #010409; font-size: 13px; }
     </style>
 </head>
 
@@ -189,41 +214,13 @@
     <div class="container">
         <h2 class="reveal slide-up">Expertise</h2>
         <div class="grid">
-            <div class="card exp-fb reveal slide-left">
-                <i class="fa-brands fa-facebook-f"></i>
-                <h3>Facebook Ads</h3>
-                <p>Scaling brands with precision</p>
-            </div>
-            <div class="card exp-google reveal slide-up">
-                <i class="fa-brands fa-google"></i>
-                <h3>Google Ads</h3>
-                <p>Maximizing search visibility</p>
-            </div>
-            <div class="card exp-seo reveal slide-right">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <h3>SEO</h3>
-                <p>Ranking on the first page</p>
-            </div>
-            <div class="card exp-lead reveal slide-left">
-                <i class="fa-solid fa-filter"></i>
-                <h3>Lead Generation</h3>
-                <p>High-quality prospect hunting</p>
-            </div>
-            <div class="card exp-email reveal slide-up">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <h3>Email Marketing</h3>
-                <p>Retention & automated flows</p>
-            </div>
-            <div class="card exp-yt reveal slide-right">
-                <i class="fa-brands fa-youtube"></i>
-                <h3>YouTube SEO</h3>
-                <p>Optimizing video reach</p>
-            </div>
-            <div class="card exp-sig reveal slide-up">
-                <i class="fa-solid fa-signature"></i>
-                <h3>Email Signature</h3>
-                <p>Professional brand identity</p>
-            </div>
+            <div class="card exp-fb reveal slide-left"><i class="fa-brands fa-facebook-f"></i><h3>Facebook Ads</h3><p>Scaling brands with precision</p></div>
+            <div class="card exp-google reveal slide-up"><i class="fa-brands fa-google"></i><h3>Google Ads</h3><p>Maximizing search visibility</p></div>
+            <div class="card exp-seo reveal slide-right"><i class="fa-solid fa-magnifying-glass"></i><h3>SEO</h3><p>Organic Growth Strategies</p></div>
+            <div class="card exp-lead reveal slide-left"><i class="fa-solid fa-filter"></i><h3>Lead Gen</h3><p>High-quality prospecting</p></div>
+            <div class="card exp-email reveal slide-up"><i class="fa-solid fa-envelope-open-text"></i><h3>Email</h3><p>Automated flows</p></div>
+            <div class="card exp-yt reveal slide-right"><i class="fa-brands fa-youtube"></i><h3>YouTube</h3><p>Video reach mastery</p></div>
+            <div class="card exp-sig reveal slide-up"><i class="fa-solid fa-signature"></i><h3>Branding</h3><p>Email Signatures</p></div>
         </div>
     </div>
 </section>
@@ -232,20 +229,24 @@
     <div class="container">
         <h2 class="reveal slide-up">Selected Projects</h2>
         <div class="grid">
-            <div class="card proj-1 reveal slide-left">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3>UI Design</h3>
-                <p>Sleek, modern web interfaces</p>
-            </div>
-            <div class="card proj-2 reveal slide-up">
-                <i class="fa-solid fa-bullseye"></i>
-                <h3>Conversion</h3>
-                <p>Landing pages that sell</p>
-            </div>
-            <div class="card proj-3 reveal slide-right">
-                <i class="fa-solid fa-bolt"></i>
-                <h3>Strategy</h3>
-                <p>Full-funnel digital marketing</p>
+            <div class="card proj-1 reveal slide-left"><i class="fa-solid fa-laptop-code"></i><h3>UI Design</h3><p>Sleek interfaces</p></div>
+            <div class="card proj-2 reveal slide-up"><i class="fa-solid fa-bullseye"></i><h3>Conversion</h3><p>Landing pages</p></div>
+            <div class="card proj-3 reveal slide-right"><i class="fa-solid fa-bolt"></i><h3>Strategy</h3><p>Full-funnel marketing</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="certs">
+    <div class="container">
+        <h2 class="reveal slide-up">Certifications</h2>
+        <div class="carousel-container reveal zoom-in">
+            <div class="carousel-track">
+                <div class="cert-card"><img src="cert1.png" alt="Cert 1"><p>Google Ads Certified</p></div>
+                <div class="cert-card"><img src="cert2.png" alt="Cert 2"><p>HubSpot SEO Mastery</p></div>
+                <div class="cert-card"><img src="cert3.png" alt="Cert 3"><p>Meta Professional</p></div>
+                <div class="cert-card"><img src="cert4.png" alt="Cert 4"><p>YouTube Certified</p></div>
+                <div class="cert-card"><img src="cert1.png" alt="Cert 1"><p>Google Ads Certified</p></div>
+                <div class="cert-card"><img src="cert2.png" alt="Cert 2"><p>HubSpot SEO Mastery</p></div>
             </div>
         </div>
     </div>
@@ -254,52 +255,38 @@
 <section id="contact" class="contact">
     <div class="contact-full-wrapper">
         <h2 class="reveal slide-up">Get In Touch</h2>
-        
         <div class="contact-content reveal slide-up">
             <form action="https://formspree.io/f/xykzwdar" method="POST">
                 <input type="hidden" name="_next" value="https://shanjida-borsha.github.io/portfolio/thankyou.html">
                 <input type="text" name="name" placeholder="YOUR NAME" required>
-                <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
-                <textarea name="message" rows="5" placeholder="MESSAGE" required></textarea>
+                <input type="email" name="email" placeholder="EMAIL" required>
+                <textarea name="message" rows="4" placeholder="MESSAGE" required></textarea>
                 <button type="submit">SEND MESSAGE</button>
             </form>
-
-            <div class="info-box">
-                <div class="contact-details">
-                    <p><i class="fa-solid fa-phone"></i> +880 1741 798260</p>
-                    <p><i class="fa-solid fa-location-dot"></i> Mohammadpur, Dhaka</p>
-                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:shanjida.borsha1@gmail.com">shanjida.borsha1@gmail.com</a></p>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/shanjida-khanom-borsha" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://wa.link/ijyfdc" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://facebook.com/san.jeeda.779/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/@s_borsha" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/shanjida-khanom-borsha" style="color:#0A66C2" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.link/ijyfdc" style="color:#25D366" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://facebook.com/san.jeeda.779/" style="color:#1877F2" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@s_borsha" style="color:#FF0000" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
-        </div>
-
-        <div class="map-container reveal">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.03694485061!2d90.35334235224376!3d23.7470505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf36a43b224d%3A0xc392688b5063073d!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1714589000000!5m2!1sen!2sbd"></iframe>
         </div>
     </div>
 </section>
 
-<footer>
-    <p>© 2026 SHANJIDA KHANOM BORSHA. ALL RIGHTS RESERVED.</p>
-</footer>
+<footer><p>© 2026 SHANJIDA KHANOM BORSHA. ALL RIGHTS RESERVED.</p></footer>
 
 <script>
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+            if (entry.isIntersecting) { 
+                entry.target.classList.add('active'); 
+            }
+            else { 
+                entry.target.classList.remove('active'); 
             }
         });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>

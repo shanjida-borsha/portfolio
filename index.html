@@ -42,30 +42,20 @@
             opacity: 0; 
             transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1); 
         } 
+        .active { 
+            opacity: 1 !important; 
+            transform: translate(0) scale(1) !important; 
+        }
         .slide-up { transform: translateY(30px); }
         .slide-left { transform: translateX(-50px); }
         .slide-right { transform: translateX(50px); }
         .zoom-in { transform: scale(0.9); }
 
-        .active { 
-            opacity: 1 !important; 
-            transform: translate(0) scale(1) !important; 
-        }
-
-        /* CARD STAGGERING DELAYS */
-        .grid .card:nth-child(1) { transition-delay: 0.1s; }
-        .grid .card:nth-child(2) { transition-delay: 0.2s; }
-        .grid .card:nth-child(3) { transition-delay: 0.3s; }
-        .grid .card:nth-child(4) { transition-delay: 0.4s; }
-        .grid .card:nth-child(5) { transition-delay: 0.5s; }
-        .grid .card:nth-child(6) { transition-delay: 0.6s; }
-        .grid .card:nth-child(7) { transition-delay: 0.7s; }
-
         /* HERO SECTION */
-        .hero img {
+        .hero img.profile-pic {
             width: 160px; height: 160px;
             border-radius: 50%; 
-            border: 2px solid #38bdf8;
+            border: 2px solid #38bdf8; /* Thinner Border */
             object-fit: cover; 
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
             margin-bottom: 15px !important; 
@@ -74,11 +64,14 @@
         }
 
         .hero-text { text-align: center; max-width: 850px; margin: 0 auto !important; }
+        
+        .hero-text h1 { font-size: 42px; margin-bottom: 5px !important; }
+
         .designation { 
             font-family: 'Dancing Script', cursive; 
             color: #38bdf8; 
-            font-size: 28px; 
-            margin-bottom: 10px !important; 
+            font-size: 30px; 
+            margin-bottom: 15px !important; 
             display: block;
         }
 
@@ -90,6 +83,7 @@
             padding: 0 20px;
         }
 
+        /* BADGES */
         .badge-container {
             display: flex;
             justify-content: center;
@@ -99,21 +93,25 @@
         }
 
         .badge {
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid #38bdf8;
-            color: #38bdf8;
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 13px;
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #e5e7eb;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
+            gap: 10px;
+        }
+
+        .fiverr-badge-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            object-fit: contain;
         }
         
-        .badge i.fa-fiverr { color: #1dbf73; font-size: 16px; }
-
         .cv-btn {
             padding: 12px 35px; 
             background: #38bdf8; 
@@ -128,11 +126,11 @@
         }
         .cv-btn:hover { background: white; transform: scale(1.05); }
 
-        /* GRID & CARDS */
+        /* SKILLS GRID */
         .container { max-width: 1100px; margin: auto !important; }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
@@ -142,33 +140,15 @@
             text-align: center;
             transition: all 0.6s ease; 
             border: 1px solid rgba(255,255,255,0.05);
-            cursor: pointer;
+            background: #0f172a;
         }
         .card:hover { 
             transform: translateY(-10px); 
-            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.2); 
+            border-color: #38bdf8;
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.1); 
         }
         
-        .card i { 
-            font-size: 45px; 
-            margin-bottom: 15px !important; 
-            display: block; 
-            transition: transform 0.6s ease-in-out; 
-        }
-        .card:hover i { transform: rotate(15deg) scale(1.2); }
-
-        /* SKILL GRADIENTS */
-        .exp-fb { background: linear-gradient(135deg, #1877F2, #0052cc); }
-        .exp-google { background: linear-gradient(135deg, #EA4335, #fbbc05); }
-        .exp-seo { background: linear-gradient(135deg, #00C4CC, #38bdf8); }
-        .exp-lead { background: linear-gradient(135deg, #8b5cf6, #d946ef); }
-        .exp-email { background: linear-gradient(135deg, #ff9a1a, #ff5e00); }
-        .exp-sig { background: linear-gradient(135deg, #2dd4bf, #0d9488); }
-        .exp-yt { background: linear-gradient(135deg, #ff0000, #b91c1c); }
-
-        .proj-1 { background: linear-gradient(135deg, #a855f7, #6366f1); }
-        .proj-2 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-        .proj-3 { background: linear-gradient(135deg, #10b981, #3b82f6); }
+        .card i { font-size: 45px; margin-bottom: 15px !important; color: #38bdf8; display: block; }
 
         /* CAROUSEL */
         .carousel-container { width: 100%; overflow: hidden; padding: 20px 0 !important; }
@@ -178,26 +158,21 @@
             width: max-content; 
             animation: scroll 30s linear infinite; 
         }
-        .carousel-track:hover { animation-play-state: paused; }
         .cert-card {
             width: 280px; height: 180px; 
             background: #0f172a; 
             border-radius: 10px;
-            border: 1px solid #38bdf8; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center;
+            border: 1px solid rgba(56, 189, 248, 0.2); 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
-        .cert-card img { width: 80%; height: 110px; object-fit: contain; margin-bottom: 10px !important; }
-        .cert-card p { font-size: 13px; color: #38bdf8; font-weight: 600; text-align: center; }
+        .cert-card img { width: 80%; height: 100px; object-fit: contain; margin-bottom: 10px !important; }
 
         @keyframes scroll { 
             0% { transform: translateX(0); } 
             100% { transform: translateX(calc(-300px * 4)); } 
         }
 
-        /* CONTACT SECTION */
+        /* CONTACT & MAP */
         .contact { width: 100%; padding: 60px 0 !important; background: #0f172a; }
         .contact-content { width: 90%; max-width: 700px; margin: 0 auto !important; }
         form { 
@@ -205,28 +180,21 @@
         }
         form input, form textarea {
             width: 100%; padding: 15px; margin-bottom: 15px !important;
-            background: #0f172a; border: 1px solid #38bdf8; color: #fff; border-radius: 8px;
+            background: #0f172a; border: 1px solid #334155; color: #fff; border-radius: 8px;
         }
         form button { 
             width: 100%; padding: 15px; background: #38bdf8; 
-            font-weight: 700; border-radius: 8px; border: none; 
-            cursor: pointer; transition: 0.3s; 
+            font-weight: 700; border-radius: 8px; border: none; cursor: pointer; 
         }
-        form button:hover { background: white; color: #020617; }
 
-        /* GOOGLE MAP STYLING */
+        .social-links { display: flex; gap: 25px; justify-content: center; margin-bottom: 40px !important; }
+        .social-links a { font-size: 35px; transition: 0.4s; text-decoration: none; }
+        .social-links a:hover { transform: translateY(-5px); }
+
         .map-section {
-            width: 100%;
-            height: 350px;
-            margin-top: 40px !important;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid #38bdf8;
+            width: 100%; height: 350px; border-radius: 15px; overflow: hidden;
+            border: 2px solid #38bdf8; margin-top: 20px !important;
         }
-
-        .social-links { display: flex; gap: 25px; justify-content: center; margin-top: 25px !important; }
-        .social-links a { font-size: 35px; transition: 0.5s; text-decoration: none; }
-        .social-links a:hover { transform: translateY(-10px); filter: drop-shadow(0 0 10px currentColor); }
 
         footer { padding: 30px; text-align: center; background: #010409; font-size: 13px; }
     </style>
@@ -236,19 +204,22 @@
 
 <header>
     <div class="hero reveal zoom-in">
-        <img src="photo.png" alt="Shanjida Khanom Borsha">
+        <img src="photo.png" alt="Shanjida Khanom Borsha" class="profile-pic">
         <div class="hero-text">
             <h1>SHANJIDA KHANOM BORSHA</h1>
-            <span class="designation">NSDA Level 4 Certified Digital Marketer</span>
+            <span class="designation">Innovative Digital Marketer</span>
             
             <div class="badge-container">
-                <span class="badge"><i class="fa-solid fa-award"></i> NSDA Level 4</span>
-                <span class="badge"><i class="fa-brands fa-fiverr"></i> Fiverr Freelancer</span>
+                <span class="badge"><i class="fa-solid fa-award" style="color: #fbbc05;"></i> NSDA Level 4 Certified</span>
+                <span class="badge">
+                    <img src="Fiverr Logo.png" alt="Fiverr" class="fiverr-badge-icon">
+                    Fiverr International Freelancer
+                </span>
             </div>
 
             <p class="profile-bio">
-                Experienced Digital Marketing Specialist with a focus on delivering high-ROI results for international clients on Fiverr. 
-                Certified by NSDA at Level 4, I bring a professional and strategic approach to Facebook Ads, Google Ads, and SEO to help global businesses grow.
+                Expert Digital Marketing Specialist providing global-standard services for international clients. 
+                With an NSDA Level 4 Certification and a focus on high-impact strategies, I help brands dominate Facebook, Google, and Search Engines.
             </p>
 
             <a href="CV-Shanjida Khanom Borsha.pdf" download class="cv-btn">
@@ -262,24 +233,12 @@
     <div class="container">
         <h2 class="reveal slide-up">Expertise</h2>
         <div class="grid">
-            <div class="card exp-fb reveal slide-left"><i class="fa-brands fa-facebook-f"></i><h3>Facebook Ads</h3><p>Scaling brands with precision</p></div>
-            <div class="card exp-google reveal slide-up"><i class="fa-brands fa-google"></i><h3>Google Ads</h3><p>Maximizing search visibility</p></div>
-            <div class="card exp-seo reveal slide-right"><i class="fa-solid fa-magnifying-glass"></i><h3>SEO</h3><p>Organic Growth Strategies</p></div>
-            <div class="card exp-lead reveal slide-left"><i class="fa-solid fa-filter"></i><h3>Lead Gen</h3><p>High-quality prospecting</p></div>
-            <div class="card exp-email reveal slide-up"><i class="fa-solid fa-envelope-open-text"></i><h3>Email</h3><p>Automated flows</p></div>
-            <div class="card exp-yt reveal slide-right"><i class="fa-brands fa-youtube"></i><h3>YouTube</h3><p>Video reach mastery</p></div>
-            <div class="card exp-sig reveal slide-up"><i class="fa-solid fa-signature"></i><h3>Branding</h3><p>Email Signatures</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="projects">
-    <div class="container">
-        <h2 class="reveal slide-up">Selected Projects</h2>
-        <div class="grid">
-            <div class="card proj-1 reveal slide-left"><i class="fa-solid fa-globe"></i><h3>International Clients</h3><p>Global project management</p></div>
-            <div class="card proj-2 reveal slide-up"><i class="fa-brands fa-fiverr"></i><h3>Fiverr Success</h3><p>High-rated deliverables</p></div>
-            <div class="card proj-3 reveal slide-right"><i class="fa-solid fa-chart-line"></i><h3>ROI Strategy</h3><p>Full-funnel marketing</p></div>
+            <div class="card reveal slide-left"><i class="fa-brands fa-facebook-f"></i><h3>Facebook Ads</h3><p>Scaling brands with precision targeting</p></div>
+            <div class="card reveal slide-up"><i class="fa-brands fa-google"></i><h3>Google Ads</h3><p>ROI-focused search and display campaigns</p></div>
+            <div class="card reveal slide-right"><i class="fa-solid fa-magnifying-glass"></i><h3>SEO Strategy</h3><p>Organic growth and ranking mastery</p></div>
+            <div class="card reveal slide-left"><i class="fa-solid fa-filter"></i><h3>Lead Generation</h3><p>High-quality client acquisition</p></div>
+            <div class="card reveal slide-up"><i class="fa-solid fa-envelope"></i><h3>Email Marketing</h3><p>Retention and conversion automation</p></div>
+            <div class="card reveal slide-right"><i class="fa-brands fa-youtube"></i><h3>YouTube Ads</h3><p>Strategic video brand positioning</p></div>
         </div>
     </div>
 </section>
@@ -290,11 +249,11 @@
         <div class="carousel-container reveal zoom-in">
             <div class="carousel-track">
                 <div class="cert-card"><img src="cert1.png" alt="NSDA"><p>NSDA Level 4 Certified</p></div>
-                <div class="cert-card"><img src="cert2.png" alt="Google"><p>Google Ads Professional</p></div>
-                <div class="cert-card"><img src="cert3.png" alt="Meta"><p>Meta Marketing Associate</p></div>
+                <div class="cert-card"><img src="cert2.png" alt="Google"><p>Google Ads Certified</p></div>
+                <div class="cert-card"><img src="cert3.png" alt="Meta"><p>Meta Professional</p></div>
                 <div class="cert-card"><img src="cert4.png" alt="SEO"><p>SEO Strategy Expert</p></div>
                 <div class="cert-card"><img src="cert1.png" alt="NSDA"><p>NSDA Level 4 Certified</p></div>
-                <div class="cert-card"><img src="cert2.png" alt="Google"><p>Google Ads Professional</p></div>
+                <div class="cert-card"><img src="cert2.png" alt="Google"><p>Google Ads Certified</p></div>
             </div>
         </div>
     </div>
@@ -305,22 +264,21 @@
         <h2 class="reveal slide-up">Get In Touch</h2>
         <div class="contact-content reveal slide-up">
             <form action="https://formspree.io/f/xykzwdar" method="POST">
-                <input type="hidden" name="_next" value="https://shanjida-borsha.github.io/portfolio/thankyou.html">
                 <input type="text" name="name" placeholder="YOUR NAME" required>
                 <input type="email" name="email" placeholder="EMAIL" required>
                 <textarea name="message" rows="4" placeholder="MESSAGE" required></textarea>
                 <button type="submit">SEND MESSAGE</button>
             </form>
 
-            <div class="map-section reveal zoom-in">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d14608.272922153282!2d90.35402633955078!3d23.745074600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf36706037b5%3A0xf639e7b288593a15!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/shanjida-khanom-borsha" style="color:#0A66C2;" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.link/ijyfdc" style="color:#25D366;" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://facebook.com/san.jeeda.779/" style="color:#1877F2;" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@s_borsha" style="color:#FF0000;" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
 
-            <div class="social-links">
-                <a href="https://linkedin.com/in/shanjida-khanom-borsha" style="color:#0A66C2" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://wa.link/ijyfdc" style="color:#25D366" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://facebook.com/san.jeeda.779/" style="color:#1877F2" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.youtube.com/@s_borsha" style="color:#FF0000" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <div class="map-section reveal zoom-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1!1s0x3755c0ad09d84687%3A0x367980993d054d6d!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

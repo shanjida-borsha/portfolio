@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Shanjida Khanom Borsha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        body { background: #020617; color: #e5e7eb; overflow-x: hidden; }
+        
+        .nav-header { padding: 30px 20px; display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+        .back-home { color: #38bdf8; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-home:hover { transform: translateX(-5px); }
+
+        .container { max-width: 1100px; margin: 50px auto !important; padding: 0 20px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 48px; text-align: center; margin-bottom: 50px; color: #fff; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        /* Project Card Styling */
+        .card { padding: 50px 35px; border-radius: 25px; text-align: center; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); color: white; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); border-color: #38bdf8; }
+        
+        .card i { font-size: 55px; margin-bottom: 25px; display: inline-block; transition: 0.8s; }
+        .card:hover i { transform: rotate(15deg) scale(1.2); }
+
+        /* Unique Gradients */
+        .proj-email { background: linear-gradient(145deg, #0f172a, #1e293b); }
+        .proj-yt { background: linear-gradient(145deg, #450a0a, #7f1d1d); }
+        .proj-global { background: linear-gradient(145deg, #064e3b, #065f46); }
+        .proj-google { background: linear-gradient(145deg, #78350f, #92400e); } /* NEW: Google Ads Gradient */
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        footer { padding: 40px; text-align: center; color: #94a3b8; font-size: 14px; border-top: 1px solid #1e293b; margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-header">
+        <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> BACK TO HOME</a>
+        <div style="color: #38bdf8; font-weight: 700; letter-spacing: 2px;">SKB PORTFOLIO</div>
+    </nav>
+
+    <div class="container">
+        <h1 class="reveal">Success Stories</h1>
+        
+        <div class="grid">
+            <div class="card proj-google reveal">
+                <i class="fa-brands fa-google" style="color: #fbbc05;"></i>
+                <h3>Google Ads SEM</h3>
+                <p style="margin-top: 15px; line-height: 1.6; color: #cbd5e1;">Executed high-intent search campaigns and Display Ads, lowering average CPA by 18% while scaling click-through rates.</p>
+            </div>
+
+            <div class="card proj-email reveal">
+                <i class="fa-solid fa-paper-plane" style="color: #38bdf8;"></i>
+                <h3>Email Mastery</h3>
+                <p style="margin-top: 15px; line-height: 1.6; color: #cbd5e1;">Designed automated lifecycle sequences for e-commerce brands, achieving a 25% increase in repeat customer rates.</p>
+            </div>
+
+            <div class="card proj-yt reveal">
+                <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
+                <h3>YouTube Growth</h3>
+                <p style="margin-top: 15px; line-height: 1.6; color: #cbd5e1;">Optimized metadata and thumbnail strategies for channels, resulting in a 40% organic reach boost within 90 days.</p>
+            </div>
+
+            <div class="card proj-global reveal">
+                <i class="fa-solid fa-globe" style="color: #2dd4bf;"></i>
+                <h3>Global Outreach</h3>
+                <p style="margin-top: 15px; line-height: 1.6; color: #cbd5e1;">Managed $5,000+ monthly ad spend for US-based clients, maintaining a consistent ROAS of 4.0 or higher.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 SHANJIDA KHANOM BORSHA. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('active'); }
+                else { entry.target.classList.remove('active'); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

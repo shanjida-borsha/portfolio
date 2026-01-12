@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHANJIDA KHANOM BORSHA | Portfolio</title>
-
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -27,7 +27,23 @@
 
         /* HERO & BADGES */
         .hero { text-align: center; width: 100%; }
-        .hero img.profile-pic { width: 160px; height: 160px; border-radius: 50%; border: 3px solid #38bdf8; object-fit: cover; box-shadow: 0 0 30px rgba(56, 189, 248, 0.3); margin: 0 auto 25px; display: block; }
+        .hero img.profile-pic { 
+    width: 220px; /* Increased from 160px */
+    height: 220px; /* Increased from 160px */
+    border-radius: 50%; 
+    border: 4px solid #38bdf8; /* Slightly thicker border */
+    object-fit: cover; 
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.4); 
+    margin: 0 auto 30px; 
+    display: block; 
+    transition: transform 0.5s ease;
+}
+
+/* Optional: Add this hover effect for a professional touch */
+.hero img.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(56, 189, 248, 0.6);
+}
         .designation { font-family: 'Dancing Script', cursive; color: #38bdf8; font-size: 32px; margin-bottom: 20px; display: block; }
         .badge-container { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
         .badge { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(56, 189, 248, 0.3); color: #fff; padding: 10px 20px; border-radius: 30px; font-size: 14px; display: flex; align-items: center; gap: 10px; }
@@ -69,6 +85,7 @@
         .exp-canva { background: linear-gradient(135deg, #065f46, #2dd4bf); }
         .exp-lead { background: linear-gradient(135deg, #5b21b6, #8b5cf6); }
         .exp-email { background: linear-gradient(135deg, #1e293b, #475569); }
+        .exp-youtube { background: linear-gradient(135deg, #450a0a, #cc0000); }
 
         /* PROJECT GATEWAY CARD */
         .project-card-fancy { 
@@ -93,9 +110,68 @@
             transition: 0.3s;
             text-align: left;
         }
-        .faq-item:hover { background: rgba(56, 189, 248, 0.05); transform: translateY(-5px); }
-        .faq-item h4 { color: #38bdf8; margin-bottom: 12px; font-size: 18px; }
-        .faq-item p { color: #94a3b8; font-size: 15px; line-height: 1.6; }
+        /* PREMIUM FAQ DESIGN */
+.faq-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 25px; 
+}
+
+.faq-item { 
+    background: rgba(15, 23, 42, 0.4); 
+    backdrop-filter: blur(10px);
+    padding: 35px; 
+    border-radius: 24px; 
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Subtle gradient glow on hover */
+.faq-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.faq-item:hover::before { transform: translateX(100%); }
+
+.faq-item:hover { 
+    background: rgba(56, 189, 248, 0.04);
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.faq-item h4 { 
+    color: #fff; 
+    margin-bottom: 15px; 
+    font-size: 20px; 
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Adding a small icon before the question */
+.faq-item h4::before {
+    content: 'Q.';
+    color: #38bdf8;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.faq-item p { 
+    color: #94a3b8; 
+    font-size: 15px; 
+    line-height: 1.8; 
+    border-left: 2px solid rgba(56, 189, 248, 0.2);
+    padding-left: 15px;
+}
 
         /* CERTIFICATION CAROUSEL */
         .carousel-wrapper { overflow: hidden; padding: 20px 0; }
@@ -120,15 +196,159 @@
         .social-links a.facebook:hover { color: #1877F2; filter: drop-shadow(0 0 10px #1877F2); }
         .social-links a.youtube:hover { color: #FF0000; filter: drop-shadow(0 0 10px #FF0000); }
 
-        /* CONTACT DETAILS */
-        .contact-details-box { display: flex; justify-content: center; width: 100%; margin-top: 40px; }
-        .contact-details { display: inline-flex; flex-direction: column; gap: 15px; text-align: left; }
-        .detail-item { font-size: 16px; color: #94a3b8; display: flex; align-items: center; gap: 15px; }
-        .detail-item i { color: #38bdf8; font-size: 20px; width: 25px; text-align: center; }
+        /* SIDE-BY-SIDE CONTACT LAYOUT */
+.contact-flex-container { 
+    display: flex; 
+    gap: 30px; 
+    align-items: center; /* Keeps text and map vertically centered */
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap; 
+    gap: 30px;
+    /* Allows stacking on mobile devices */
+}
 
-        /* MAP FIX & DARK FILTER */
-        .map-container { width: 100%; height: 400px; border-top: 4px solid #38bdf8; margin-top: 50px; filter: grayscale(1) invert(0.92) contrast(1.2); }
-        footer { padding: 30px; text-align: center; background: #010409; font-size: 13px; color: #94a3b8; border-top: 1px solid #1e293b; }
+.contact-info-side { 
+    flex: 1; 
+    min-width: 280px; /* Prevents text from getting too squeezed */
+}
+
+.map-side { 
+    flex: 1; 
+    min-width: 300px; 
+    height: 300px; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    /* Removed grayscale/invert filters to keep it colorful */
+    border: 2px solid rgba(56, 189, 248, 0.4); 
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); /* Adds a subtle blue glow around the map */
+    transition: 0.4s ease;
+}
+
+.map-side:hover { 
+    transform: scale(1.02); /* Slight zoom on hover */
+    border-color: #38bdf8; 
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+}
+
+/* Adjust the detail items for the side-layout */
+    /* COLORFUL CONTACT ICONS */
+.detail-item i { 
+    width: 55px; 
+    height: 55px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 22px; 
+    background: rgba(255, 255, 255, 0.03);
+    border: 0px solid transparent;
+    transition: all 0.4s ease;
+    padding: 0px;
+    
+}
+
+/* Specific Colors for each Icon Type */
+.fa-phone { 
+    color: #25D366; /* WhatsApp/Phone Green */
+    border-color: rgba(37, 211, 102, 0.2) !important;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.1);
+}
+
+.fa-envelope { 
+    color: #38bdf8; /* Sky Blue */
+    border-color: rgba(56, 189, 248, 0.2) !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+}
+
+.fa-location-dot { 
+    color: #ff4757; /* Google Maps Red */
+    border-color: rgba(255, 71, 87, 0.2) !important;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.1);
+}
+
+/* Hover Effect: Full Color Fill */
+.detail-item:hover .fa-phone { background: #25D366; color: #fff; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+.detail-item:hover .fa-envelope { background: #38bdf8; color: #fff; box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+.detail-item:hover .fa-location-dot { background: #ff4757; color: #fff; box-shadow: 0 0 20px rgba(255, 71, 87, 0.4); }
+/* PREMIUM CENTERED FOOTER */
+footer { 
+    padding: 30px 20px; /* Increased padding for beauty */
+    text-align: center; 
+    background: #010409; 
+    border-top: 1px solid rgba(56, 189, 248, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures everything stays in the middle */
+    justify-content: center;
+}
+
+.footer-content { 
+    max-width: 800px; 
+    width: 100%;
+}
+
+.footer-logo { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 28px; 
+    color: #fff; 
+    margin-bottom: 12px; 
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4); /* Subtle glow effect */
+}
+
+.footer-tagline { 
+    color: #38bdf8; 
+    font-size: 14px; 
+    letter-spacing: 4px; /* Increased spacing for premium look */
+    text-transform: uppercase; 
+    margin-bottom: 30px; 
+    font-weight: 300;
+}
+
+.copyright { 
+    font-size: 12px; 
+    color: #475569; 
+    padding-top: 30px; 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+    display: block; 
+    width: 100%;
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000; /* Ensures it stays above all other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+}
+
+/* Optional: Pulse animation to catch the eye */
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float {
+    animation: pulse-green 2s infinite;
+}
     </style>
 </head>
 <body>
@@ -157,6 +377,8 @@
             <div class="card exp-canva reveal slide-right"><i class="fa-solid fa-palette"></i><h3>Design with Canva</h3><p>Stunning visuals for social media growth.</p></div>
             <div class="card exp-lead reveal slide-left"><i class="fa-solid fa-filter"></i><h3>Lead Generation</h3><p>Targeted funnel optimization and prospect conversion.</p></div>
             <div class="card exp-email reveal slide-right"><i class="fa-solid fa-envelope-open-text"></i><h3>Email Marketing</h3><p>Automated sequences & high-converting copies.</p></div>
+            <div class="card exp-youtube reveal slide-up"><i class="fa-brands fa-youtube"></i><h3>YouTube SEO</h3>
+            <p>Ranking videos through advanced keyword research and metadata optimization.</p></div>
         </div>
     </div>
 </section>
@@ -204,16 +426,22 @@
         <h2 class="reveal slide-up">Frequently Asked Questions</h2>
         <div class="faq-grid">
             <div class="faq-item reveal slide-left">
-                <h4>What industries do you specialize in?</h4>
-                <p>I focus on E-commerce, Tech Startups, and Personal Brands looking to scale through data-driven campaigns.</p>
+                <h4>How do you stay updated with the latest marketing trends?</h4>
+                <p>Digital marketing changes daily. I dedicate an hour every morning to following industry leaders like Neil Patel and Hubspot, and I’m active in marketing communities on LinkedIn. This ensures I’m always applying the most current strategies—like AI-driven ad targeting—to my projects</p>
             </div>
+            
             <div class="faq-item reveal slide-up">
                 <h4>How do you measure success?</h4>
-                <p>Success is measured by ROAS, CPA, and the quality of leads generated, ensuring your budget drives profit.</p>
+                <p>Success is measured by ROAS (Return on Ad Spend), CPA (Cost Per Acquisition), and the overall quality of leads to ensure your budget drives actual profit.</p>
+            </div>
+            
+            <div class="faq-item reveal slide-right">
+                <h4>Why should I hire a fresh digital marketer instead of an agency?</h4>
+                <p>YHiring me means you get dedicated, 1-on-1 attention and a marketer who is trained in the absolute latest platform updates. I am highly motivated to deliver exceptional results to build my own success stories, meaning I will work harder to ensure your campaign succeeds</p>
             </div>
             <div class="faq-item reveal slide-right">
-                <h4>Are you available for long-term work?</h4>
-                <p>Yes, I offer monthly retainer packages for consistent optimization and brand scaling.</p>
+                <h4> I have a small budget. Can you still help me?</h4>
+                <p>Yes! One of my skills as a modern marketer is Budget Efficiency. I specialize in finding 'low-hanging fruit'— targeting specific niche audiences or local areas in Dhaka—to ensure every Taka of your ad spend is working toward a conversion.</p>
             </div>
         </div>
     </div>
@@ -231,7 +459,7 @@
     <input type="text" name="name" placeholder="YOUR NAME" required>
     <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
     <textarea name="message" rows="4" placeholder="HOW CAN I HELP YOU?" required></textarea>
-    <button type="submit" class="btn-shared">SEND MESSAGE</button>
+    <button type="submit" class="btn-shared" style="width: 100%; justify-content: center;">SEND MESSAGE</button>
 </form>
 
             <div class="social-links reveal zoom-in">
@@ -241,24 +469,58 @@
                 <a href="https://www.youtube.com/@s_borsha" class="youtube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             </div>
 
-            <div class="contact-details-box reveal slide-up">
-                <div class="contact-details">
-                    <div class="detail-item"><i class="fa-solid fa-phone"></i><span>01741798260</span></div>
-                    <div class="detail-item"><i class="fa-solid fa-envelope"></i><span>shanjida.borsha1@gmail.com</span></div>
-                    <div class="detail-item"><i class="fa-solid fa-location-dot"></i><span>Mohammadpur, Dhaka, Bangladesh</span></div>
-                </div>
-            </div>
+            <div class="contact-flex-container reveal slide-up">
+    
+    <div class="contact-info-side">
+    <div class="contact-details">
+        <div class="detail-item reveal slide-left">
+            <i class="fa-solid fa-phone"></i>
+            <span>01741798260</span>
+        </div>
+        
+        <div class="detail-item reveal slide-left" style="transition-delay: 0.1s;">
+            <i class="fa-solid fa-envelope"></i>
+            <span>shanjida.borsha1@gmail.com</span>
+        </div>
+        
+        <div class="detail-item reveal slide-left" style="transition-delay: 0.2s;">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Mohammadpur, Dhaka, Bangladesh</span>
+        </div>
+    </div>
+</div>
+
+    <div class="map-side">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.0369448503!2d90.352462!3d23.74705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4d5446534d%3A0x6790933758231295!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1715600000000!5m2!1sen!2sbd" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+</div>
         </div>
     </div>
 </section>
-
-<div class="map-container reveal slide-up">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14607.602241315848!2d90.35035219760714!3d23.7509230534246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4e39235947%3A0xad383d401e6d95a1!2sMohammadpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1715600000000!5m2!1sen!2sbd" 
-    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-
-<footer><p>© 2026 SHANJIDA KHANOM BORSHA. ALL RIGHTS RESERVED.</p></footer>
-
+<footer>
+    <div class="footer-content reveal zoom-in">
+        <div class="footer-logo">SHANJIDA KHANOM BORSHA</div>
+        <div class="footer-tagline">Digital Growth Expert</div>
+        
+        <div class="copyright">
+            © 2026 SHANJIDA KHANOM BORSHA. ALL RIGHTS RESERVED.
+            <br>
+            <span style="opacity: 0.5; font-size: 10px; margin-top: 5px; display: block;">DHAKA, BANGLADESH</span>
+        </div>
+    </div>
+</footer>
+<a href="https://wa.me/8801741798260" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</body>
 <script>
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -267,6 +529,30 @@
         });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    var form = document.querySelector("form");
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  var data = new FormData(event.target);
+  
+  fetch(event.target.action, {
+    method: 'POST',
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      // THIS MANUALLY SENDS THE USER TO YOUR THANK YOU PAGE
+      window.location.href = "thank-you.html";
+    } else {
+      alert("Oops! There was a problem submitting your form");
+    }
+  }).catch(error => {
+    alert("Oops! There was a problem connecting to the server");
+  });
+}
+form.addEventListener("submit", handleSubmit)
 </script>
 
 </body>
